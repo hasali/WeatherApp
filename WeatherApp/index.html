@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />  
+	<link rel="stylesheet" href="resources/css/main.css">
+<!--	<script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.bundle.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+</head>
+<body>
+
+    <style>    
+        canvas 
+        {
+            border: thick solid black;
+            border-radius: 50px;
+            padding: 20px;
+        }
+        .container td{
+            vertical-align: top;
+            text-align:left;
+            line-height: 0.4em;
+            
+        }
+        .container table{
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .container h2{
+            display: inline-block;
+            vertical-align:middle;
+        }
+        .container tr td:nth-child(2){
+           position: relative;
+           top: 32.5px;
+        }
+        .container p{
+            opacity: 0.5;
+        }
+    </style>
+ <script id="jqmPage" type="text/x-handlebars-template">
+         
+        <table>
+        <tr>
+            <td>
+                <h4>{{city.name}}, {{city.country}}</h4>
+                <p>{{trim list.0.dt_txt}}</p>
+                <p>{{list.0.weather.0.description}}</p>
+                <h2>{{math list.0.main.temp "-" 274.15}}&deg;C</h2>
+                <h2><img src="http://openweathermap.org/img/w/{{list.0.weather.0.icon}}.png" /></h2>
+            </td>
+            <td>
+               <p>Humidity: {{list.0.main.humidity}}%</p>
+               <p>Wind: {{math list.0.wind.speed "*" 3.6}} m/h</p>   
+            </td>
+            </tr>
+        </table>
+    
+    
+</script>
+    <div data-role="page" id="home">
+
+        <div data-role="header">
+            <h1>Your Forecast</h1>
+
+        </div>
+        <div role="main">
+            <div class="container">
+                <div id="current"></div>
+            </div>
+            <div style = "width: 70%; text-align: center; margin:auto; padding-right: 50px;">
+                <canvas id="canvas" height = "300" width="600"></canvas>
+            </div>
+            <input id="search" type="text" name="search" placeholder="Search City..." >
+            <a href="#placesList" data-role="button" id="btnS" rel="external">Go</a>
+
+            <ul id ='myList' data-role="listview">
+
+            </ul>
+            <div data-role="collapsible">
+               <h1>Your Searches</h1>
+                    <ul id ="searched" data-role="listview">
+                    
+                    </ul>
+            </div>
+
+            <div data-role="footer">
+                <h1>All Rights Reserved</h1>
+            </div>
+        </div>
+
+    </div>
+    <div data-role="page" id="placesList">
+		<div data-role="header">
+			<h1></h1>
+		</div>
+		<div role="main">
+            <div class=container>
+                <div id="chosen"></div>
+            </div>
+            <div style = "width: 70%; text-align: center; margin:auto; padding-right: 50px;">
+                <canvas id="canvas2" height = "300" width="600"></canvas>
+            </div>   
+	    </div>
+	    <div data-role="footer">
+            <h1>City Forecast</h1>
+	        <a href="#home" data-role="button" id="back" rel="external">Back</a>
+	    </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.js"></script>
+    <script type="text/javascript" src="resources/js/script.js"></script>   
+	
+    
+    
+ 
+</body>
+</html>

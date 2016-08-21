@@ -1,0 +1,23 @@
+dl {
+
+}
+dt {
+
+font-size: 1.5em;
+font-weight: bold;
+cursor: pointer;
+background: #e3e3e3;
+padding: 1px;
+line-height: 2em;
+border-top: 1px solid white;
+}
+dd {
+margin: 0px;
+line-height: 2em;
+}
+body {
+
+margin: auto;
+width: 500px;
+text-align: center;
+}

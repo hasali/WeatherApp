@@ -1,0 +1,22 @@
+{
+    "city": [
+        {
+        "name":"Toronto"
+        },
+        {
+        "name":"Kyoto"
+        },
+        {
+        "name":"London"
+        },
+        {
+        "name":"Dubai"
+        },
+        {
+        "name":"Sidney"
+        },
+        {
+        "name":"Rio de Janeiro"
+        }
+    ]
+}
